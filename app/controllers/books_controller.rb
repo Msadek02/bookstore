@@ -23,7 +23,6 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to root_path
   end
-
   
   private 
 
