@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-input[type=text] {
+input#main-search[type=text] {
     width: 130px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -17,6 +17,6 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
+input#main-search[type=text]:focus {
     width: 100%;
 }

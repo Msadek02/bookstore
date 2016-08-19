@@ -2,6 +2,10 @@ class BooksController < ApplicationController
 
   before_action :find_book, only: [:edit, :update, :destroy]
 
+  def index
+    @books = Book.order(created_at: :desc)
+  end
+
   def create
     @book = Book.new(book_params)
 
