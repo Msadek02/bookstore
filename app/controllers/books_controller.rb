@@ -24,7 +24,6 @@ class BooksController < ApplicationController
     redirect_to root_path
   end
 
-  
   private 
 
   def find_book
@@ -32,7 +31,7 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:name, :author, :publish_date)  
+    params.require(:book).permit(:name, :author_id, :publish_date)  
   end
 
 end
