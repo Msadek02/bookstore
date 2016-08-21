@@ -1,5 +1,9 @@
-<p> hello </p>
-<% @books.each do |book| %>
-<% end %>
+<p>Manage Books</p>
+
+  <% @books.each do |book| %>
+  <%= book.name %><br>
+  <%= book.publish_date %><br>
+  <%= book.author_id %><br>
+  <% end %>
 
 <%= button_to 'Add Book', new_book_path %>
