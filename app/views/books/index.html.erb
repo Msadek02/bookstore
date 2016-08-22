@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <p>Manage Books</p>
-<style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
-</head>
-<body>
- <%= button_to 'Add Book', new_book_path %><br>
+<%= link_to 'Add Book', new_book_path %><br>
 <table>
   <tr>
     <th>Name</th>
@@ -41,5 +18,3 @@ tr:nth-child(even) {
   </tr>
   <% end %>
 </table>
-</body>
-</html>

@@ -10,16 +10,10 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
 
     if @book.save
-      redirect_to root_path
+      redirect_to books_path
     else
       render "new"
     end
-  end
-
-  def edit
-  end
-
-  def show
   end
 
   def new
@@ -28,7 +22,7 @@ class BooksController < ApplicationController
 
   def update
     if @book.update(book_params)
-      redirect_to books_path(@book)
+      redirect_to books_path
     else
       render "edit"
     end
