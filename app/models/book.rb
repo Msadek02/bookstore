@@ -9,5 +9,4 @@ class Book < ActiveRecord::Base
   def self.find_by_category(category)
     Book.tagged_with(category)
   end
-
 end
