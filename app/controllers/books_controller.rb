@@ -16,14 +16,25 @@ class BooksController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def show
+  end
+
   def new
     @book = Book.new
   end
 
   def update
+    if @book.update(book_params)
+      redirect_to books_path(@book)
+    else
+      render "edit"
+    end
   end
 
-  def delete
+  def destroy
     @book.destroy
     redirect_to root_path
   end

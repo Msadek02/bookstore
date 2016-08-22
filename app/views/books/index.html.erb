@@ -1,9 +1,45 @@
-<p>Manage Books</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <p>Manage Books</p>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
 
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+ <%= button_to 'Add Book', new_book_path %><br>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Publish Date</th>
+    <th>Author Id</th>
+    <th>Action</th>
+  </tr>
   <% @books.each do |book| %>
-  <%= book.name %><br>
-  <%= book.publish_date %><br>
-  <%= book.author_id %><br>
+  <tr>
+    <td><%= book.name %></td>
+    <td><%= book.publish_date %></td>
+    <td><%= book.author_id %></td>
+    <td>
+      <%= link_to "edit", edit_book_path(book) %>
+      <%= link_to "Delete", book_path(book), :method => :delete %>
+    </td>
+  </tr>
   <% end %>
-
-<%= button_to 'Add Book', new_book_path %>
+</table>
+</body>
+</html>
