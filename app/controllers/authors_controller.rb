@@ -7,7 +7,7 @@ class AuthorsController < ApplicationController
   end
 
   def index
-    @authors = Author.order(created_at: :desc)
+    Author.order(:name)
   end
 
   def create
@@ -39,7 +39,7 @@ class AuthorsController < ApplicationController
     @author = Author.find(params[:id])
   end
 
-    def author_params
+  def author_params
     params.require(:author).permit(:name)  
   end
 end
