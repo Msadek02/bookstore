@@ -2,11 +2,15 @@ class BooksController < ApplicationController
 
   before_action :find_book, only: [:edit, :update, :destroy]
 
+  def index
+    @books = Book.order(created_at: :desc)
+  end
+
   def create
     @book = Book.new(book_params)
 
     if @book.save
-      redirect_to root_path
+      redirect_to books_path
     else
       render "new"
     end
@@ -17,9 +21,14 @@ class BooksController < ApplicationController
   end
 
   def update
+    if @book.update(book_params)
+      redirect_to books_path
+    else
+      render "edit"
+    end
   end
 
-  def delete
+  def destroy
     @book.destroy
     redirect_to root_path
   end

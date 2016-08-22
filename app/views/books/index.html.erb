@@ -1,0 +1,22 @@
+<%= button_to "Add Book", new_book_path, :id => "open-contacts-dialog-btn",
+      :class => "inbox-sf-add-btn tip", :method => :get %>
+<br>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Publish Date</th>
+    <th>Author Id</th>
+    <th>Action</th>
+  </tr>
+  <% @books.each do |book| %>
+  <tr>
+    <td><%= book.name %></td>
+    <td><%= book.publish_date %></td>
+    <td><%= book.author_id %></td>
+    <td>
+      <%= link_to "edit", edit_book_path(book) %>
+      <%= link_to "Delete", book_path(book), :method => :delete %>
+    </td>
+  </tr>
+  <% end %>
+</table>
