@@ -1,6 +1,7 @@
 class Book < ActiveRecord::Base
   belongs_to :author
   acts_as_taggable
+  ratyrate_rateable
 
   def categories
     self.tag_list

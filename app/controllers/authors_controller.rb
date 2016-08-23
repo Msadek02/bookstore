@@ -7,7 +7,7 @@ class AuthorsController < ApplicationController
   end
 
   def index
-    Author.order(:name)
+    @authors = Author.order(:name)
   end
 
   def create
