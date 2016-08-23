@@ -9,4 +9,8 @@ class Book < ActiveRecord::Base
   def self.find_by_category(category)
     Book.tagged_with(category)
   end
+
+  def self.all_categories
+    Book.tag_counts.pluck(:id, :name)
+  end
 end
