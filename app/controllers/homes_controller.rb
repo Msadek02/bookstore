@@ -4,7 +4,4 @@ class HomesController < ApplicationController
       @books = Book.search(params[:search]).records
     end
   end
-
-  def search
-  end
 end
