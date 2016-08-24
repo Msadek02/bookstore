@@ -1,7 +1,11 @@
+require 'elasticsearch/model'
+
 class Book < ActiveRecord::Base
   belongs_to :author
   acts_as_taggable
   ratyrate_rateable "quality"
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
   def categories
     self.tag_list
