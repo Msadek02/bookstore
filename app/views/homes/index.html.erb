@@ -1,6 +1,6 @@
-<%= form_tag search_path, :method => 'get' do %>
+<%= form_tag root_path, :method => 'get' do %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
+    <%= text_field_tag :search, params[:search], placeholder: "Enter a book search" %>
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
