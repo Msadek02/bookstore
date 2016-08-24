@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :books
   
   root 'homes#index'
+  get '/search', to: 'homes#search'
 
 end
