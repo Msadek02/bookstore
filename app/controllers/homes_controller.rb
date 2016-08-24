@@ -3,5 +3,6 @@ class HomesController < ApplicationController
   end
 
   def search
+    @books = Book.search(book_params).records
   end
 end
