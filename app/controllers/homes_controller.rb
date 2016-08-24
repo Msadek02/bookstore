@@ -3,6 +3,6 @@ class HomesController < ApplicationController
   end
 
   def search
-    @books = Book.search(book_params).records
+    @books = Book.search(params[:search]).records
   end
 end
