@@ -1,7 +1,8 @@
 class HomesController < ApplicationController
   def index
-    if 
-      @books = Book.search(params[:search]).records.present?
+    if params[:search].present?
+      puts "I made it in here"
+      @books = Book.search(params[:search]).records
     end
   end
 
