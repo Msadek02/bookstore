@@ -5,6 +5,7 @@ class Book < ActiveRecord::Base
   acts_as_taggable
   acts_as_commentable
   ratyrate_rateable "quality"
+  mount_uploader :avatar, AvatarUploader
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 

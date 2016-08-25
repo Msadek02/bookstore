@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825164629) do
+ActiveRecord::Schema.define(version: 20160825192347) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "avatar",     limit: 255
   end
 
   create_table "average_caches", force: :cascade do |t|
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160825164629) do
     t.datetime "publish_date"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "avatar",       limit: 255
   end
 
   create_table "comments", force: :cascade do |t|
@@ -124,6 +126,7 @@ ActiveRecord::Schema.define(version: 20160825164629) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "avatar",                 limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
