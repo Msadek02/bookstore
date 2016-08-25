@@ -4,11 +4,13 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Image</th>
     <th>Action</th>
   </tr>
   <% @authors.each do |author| %>
   <tr>
     <td><%= author.name %></td>
+    <td><%= image_tag author.avatar_url, size: "25" %></td>
     <td>
       <%= link_to "edit", edit_author_path(author) %>
       <%= link_to "Delete", author_path(author), :method => :delete, data: { confirm: 'Are you sure you want to delete this alert?' } %>
