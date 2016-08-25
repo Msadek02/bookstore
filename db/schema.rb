@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160825192347) do
     t.datetime "publish_date"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.string   "avatar",       limit: 255
+    t.string   "picture",      limit: 255
   end
 
   create_table "comments", force: :cascade do |t|
