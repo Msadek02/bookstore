@@ -8,6 +8,9 @@
   <%= f.label :author %>:
   <%= f.collection_select :author_id, Author.all, :id, :name %><br />
 
+  <%= f.label :image %>:
+  <%= f.file_field :avatars, multiple: true %>
+
   <%= f.submit %>
 
 <% end %>

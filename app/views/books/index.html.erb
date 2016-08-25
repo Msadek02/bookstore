@@ -3,6 +3,7 @@
 <br>
 <table>
   <tr>
+    <th>Image</th>
     <th>Name</th>
     <th>Publish Date</th>
     <th>Author Id</th>
@@ -10,6 +11,7 @@
   </tr>
   <% @books.each do |book| %>
   <tr>
+    <td><%= image_tag @book.image_url%></td>
     <td><%= book.name %></td>
     <td><%= book.publish_date %></td>
     <td><%= book.author_id %></td>
