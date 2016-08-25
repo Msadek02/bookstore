@@ -1,5 +1,7 @@
 <%= form_for @author do |f| %>
   <%= f.label :name %>:
   <%= f.text_field :name %><br/>
+    <%= f.label :picture %>:
+  <%= f.file_field :avatar %>
   <%= f.submit %>
 <% end %>

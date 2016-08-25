@@ -14,6 +14,7 @@ gem 'devise'
 gem 'ratyrate'
 gem 'acts_as_commentable'
 gem 'carrierwave'
+gem 'pry'
 gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'sdoc', '~> 0.4.0', group: :doc

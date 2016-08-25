@@ -1,4 +1,4 @@
-<%= form_for @book do |f| %>
+<%= form_for @book, html: { multipart: true } do |f| %>
   <%= f.label :name %>:
   <%= f.text_field :name %><br />
 
@@ -8,8 +8,8 @@
   <%= f.label :author %>:
   <%= f.collection_select :author_id, Author.all, :id, :name %><br />
 
-  <%= f.label :image %>:
-  <%= f.file_field :avatars, multiple: true %>
+  <%= f.label :picture %>:
+  <%= f.file_field :picture %>
 
   <%= f.submit %>
 
