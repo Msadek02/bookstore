@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'devise'
 gem 'ratyrate'
+gem 'acts_as_commentable'
 gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'sdoc', '~> 0.4.0', group: :doc
