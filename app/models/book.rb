@@ -8,6 +8,7 @@ class Book < ActiveRecord::Base
   mount_uploader :picture, ImageUploader
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
+  validates :name, :author_id, :publish_date, :picture, presence: true
 
   def categories
     self.tag_list
