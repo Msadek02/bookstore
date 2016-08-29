@@ -2,7 +2,7 @@ class OrderItem < ActiveRecord::Base
   belongs_to :book
   belongs_to :order
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
-  validate :product_present
+  validate :book_present
   validate :order_present
 
   before_save :finalize
@@ -11,7 +11,7 @@ class OrderItem < ActiveRecord::Base
     if persisted?
       self[:unit_price]
     else
-      product.price
+      book.price
     end
   end
 
@@ -20,10 +20,10 @@ class OrderItem < ActiveRecord::Base
   end
 
   private
-  
-  def product_present
-    if product.nil?
-      errors.add(:product, "is not valid or is not active.")
+
+  def book_present
+    if book.nil?
+      errors.add(:book, "is not valid or is not active.")
     end
   end
 
