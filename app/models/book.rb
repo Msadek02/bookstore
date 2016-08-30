@@ -2,6 +2,7 @@ require 'elasticsearch/model'
 
 class Book < ActiveRecord::Base
   belongs_to :author
+  has_many :order_items
   acts_as_taggable
   acts_as_commentable
   ratyrate_rateable "quality"
