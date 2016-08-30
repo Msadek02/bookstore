@@ -22,4 +22,12 @@ class Book < ActiveRecord::Base
   def self.all_categories
     Book.tag_counts.pluck(:id, :name)
   end
+
+  def almost_sold_out?
+    if self.inventory < 10
+      true
+    else
+      false
+    end
+  end
 end
