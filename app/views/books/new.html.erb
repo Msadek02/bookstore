@@ -1,16 +1,1 @@
-<%= form_for @book, html: { multipart: true } do |f| %>
-  <%= f.label :name %>:
-  <%= f.text_field :name %><br />
-
-  <%= f.label :publish_date %>:
-  <%= f.date_select :publish_date, :order => [:day, :month, :year] %><br />
-
-  <%= f.label :author %>:
-  <%= f.collection_select :author_id, Author.all, :id, :name %><br />
-
-  <%= f.label :picture %>:
-  <%= f.file_field :picture %>
-
-  <%= f.submit %>
-
-<% end %>
+<%= render 'form' %>

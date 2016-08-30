@@ -9,7 +9,7 @@ class Book < ActiveRecord::Base
   mount_uploader :picture, ImageUploader
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
-  validates :name, :author_id, :publish_date, :picture, presence: true
+  validates :name, :author_id, :publish_date, :picture, :description, :inventory, :price, presence: true
 
   def categories
     self.tag_list
@@ -21,5 +21,13 @@ class Book < ActiveRecord::Base
 
   def self.all_categories
     Book.tag_counts.pluck(:id, :name)
+  end
+
+  def almost_sold_out?
+    if self.inventory < 10
+      true
+    else
+      false
+    end
   end
 end
