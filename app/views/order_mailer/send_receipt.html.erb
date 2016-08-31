@@ -4,11 +4,22 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to example.com, <%= @user.email %></h1>
+    <h1>Hello <%= @user.email %>, Thank you for your order</h1>
     <p>
-      You have successfully signed up to example.com,
-      your username is: <%= @user.email %>.<br>
+      Order Number:<%= @order.id %>, created on <%= @order.created_at.strftime('%B %d %Y %H:%M %p') %>
     </p>
+      <table>
+        <tr>
+          <th>Quantity</th>
+          <th>Book Name</th>
+        </tr>
+        <% @order_items.each do |order_item| %>  
+        <tr>
+          <td><%= order_item.quantity %></td>
+          <td><%= order_item.book.name %></td>
+        </tr>
+        <% end %>
+      </table>
     <p>Thanks for joining and have a great day!</p>
   </body>
 </html>
