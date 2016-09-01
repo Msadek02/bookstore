@@ -38,4 +38,8 @@ class Book < ActiveRecord::Base
       false
     end
   end
+
+  def age_range
+    "#{self.minimum_age} to #{self.maximum_age}"
+  end
 end
