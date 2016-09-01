@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello <%= @user.email %>, Thank you for your order</h1>
+    <p>
+      Order Number:<%= @order.id %>, created on <%= @order.created_at.strftime('%B %d %Y %H:%M %p') %>
+    </p>
+      <table>
+        <tr>
+          <th>Quantity</th>
+          <th>Book Name</th>
+          <th>Unit Price</th>          
+          <th>Total Price</th>
+        </tr>
+        <% @order_items.each do |order_item| %>  
+        <tr>
+          <td><%= order_item.quantity %></td>
+          <td><%= order_item.book.name %></td>
+          <td><%= number_to_currency(order_item.unit_price) %></td> 
+          <td><%= number_to_currency(order_item.total_price) %></td>                             
+        </tr>
+        <% end %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><%= number_to_currency(@order.subtotal) %></td>
+        </tr>
+      </table>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

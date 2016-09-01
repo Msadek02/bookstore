@@ -15,6 +15,7 @@ gem 'ratyrate'
 gem 'acts_as_commentable'
 gem 'carrierwave'
 gem 'pry'
+gem "letter_opener", :group => :development
 gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'sdoc', '~> 0.4.0', group: :doc
