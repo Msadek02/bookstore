@@ -30,4 +30,12 @@ class Book < ActiveRecord::Base
       false
     end
   end
+
+  def sold_out?
+    if self.inventory == 0
+      true
+    else
+      false
+    end
+  end
 end
