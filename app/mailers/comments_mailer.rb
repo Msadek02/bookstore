@@ -3,6 +3,6 @@ class CommentsMailer < ApplicationMailer
     @comment = Comment.find(comment_id)
     @book = @comment.commentable
     @author = @comment.commentable.author
-    mail(to: @author.email, subject: 'Thanks you')
+    mail(to: @author.email, subject: 'New Comment')
   end
 end
