@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160901200110) do
+ActiveRecord::Schema.define(version: 20160902164111) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "avatar",     limit: 255
     t.string   "email",      limit: 255
+    t.text     "bio",        limit: 65535
   end
 
   create_table "average_caches", force: :cascade do |t|
