@@ -1,3 +1,5 @@
+include ActionView::Helpers::TextHelper
+
 class Author < ActiveRecord::Base
   has_many :books, dependent: :destroy
   mount_uploader :avatar, ImageUploader
@@ -9,5 +11,9 @@ class Author < ActiveRecord::Base
     else
       false
     end
+  end
+
+  def display_name
+     "#{self.name} #{pluralize(self.books.count,'book')}"
   end
 end
