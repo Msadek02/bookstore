@@ -3,4 +3,5 @@
     <%= text_field_tag :search, params[:search], placeholder: "Enter a book search" %>
     <%= submit_tag "Search", :name => nil %>
   </p>
+  <%= link_to 'Books', books_path %>
 <% end %>

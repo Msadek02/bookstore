@@ -18,10 +18,14 @@
     <td><%= image_tag book.picture_url, size: "25" %></td>
     <td><%= book.name %></td>
     <td><%= book.publish_date %></td>
-    <td><%= book.author_id %></td>
+    <td><%= book.author_id %><%= link_to 'Author', authors_path %></td>
     <td><%= number_to_currency (book.price) %></td>
     <td><%= book.description %></td>
-    <td><%= book.inventory %> In Store</td>  
+    <% if book.sold_out? %>
+      <td> Sold Out </td>
+    <% else %>
+      <td><%= book.inventory %> In Store</td>  
+    <% end %>
     <td><%= book.age_range %></td>          
     <td>
       <%= link_to "edit", edit_book_path(book) %>
