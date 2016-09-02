@@ -7,6 +7,10 @@
     <th>Name</th>
     <th>Publish Date</th>
     <th>Author Id</th>
+    <th>Price</th>
+    <th>Description</th>   
+    <th>Inventory</th>   
+    <th>Age</th>                   
     <th>Action</th>
   </tr>
   <% @books.each do |book| %>
@@ -15,6 +19,10 @@
     <td><%= book.name %></td>
     <td><%= book.publish_date %></td>
     <td><%= book.author_id %></td>
+    <td><%= number_to_currency (book.price) %></td>
+    <td><%= book.description %></td>
+    <td><%= book.inventory %> In Store</td>  
+    <td><%= book.age_range %></td>          
     <td>
       <%= link_to "edit", edit_book_path(book) %>
       <%= link_to "Delete", book_path(book), :method => :delete, data: { confirm: 'Are you sure you want to delete this alert?' } %>
