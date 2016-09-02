@@ -30,4 +30,16 @@ class Book < ActiveRecord::Base
       false
     end
   end
+
+  def sold_out?
+    if self.inventory == 0
+      true
+    else
+      false
+    end
+  end
+
+  def age_range
+    "#{self.minimum_age} to #{self.maximum_age}"
+  end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160901163807) do
+ActiveRecord::Schema.define(version: 20160901200110) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20160901163807) do
     t.decimal  "price",                      precision: 12, scale: 2
     t.text     "description",  limit: 65535
     t.integer  "inventory",    limit: 4
+    t.integer  "minimum_age",  limit: 4
+    t.integer  "maximum_age",  limit: 4
   end
 
   create_table "comments", force: :cascade do |t|
