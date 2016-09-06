@@ -16,4 +16,8 @@ class Author < ActiveRecord::Base
   def display_name
      "#{self.name} #{pluralize(self.books.count,'book')}"
   end
+
+  def self.all_premier_author
+    all.select{|a| a.premier_author? }
+  end
 end
