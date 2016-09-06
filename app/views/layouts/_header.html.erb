@@ -1,0 +1,39 @@
+<div class="Header Content">
+   <a class="Header-logoLink" href="index.html">
+    <img class="Header-logo" src="#"><%= link_to 'BookStore', root_path %></a>
+   <div class="SearchContainer SearchContainer--header" id="GlobalSearch">
+      <div class="Search">
+         <input class="Search-input" placeholder="Search 7+ Million Books by Title, Author, Keyword, or ISBN" type="text" value="">
+         <div class="Search-submit Button-container is-small is-flat" title="">Search</button></div>
+         <ul class="Search-results u-hidden"></ul>
+      </div>
+   </div>
+   <a class="Header-button Header-wishlist" href="#">
+      <span class="Header-buttonText">Wish List</span>
+   </a>
+   <div id="GlobalCartContainer" class="Header-button Header-cart">
+      <div class="GlobalCart-container">
+         <div class="Hover" id="hover-149d202">
+            <a class="GlobalCart-button is-desktop Header-button Header-cart" href="/cart/shoppingcart.aspx">
+               <span class="Header-buttonText">Cart</span>
+               <div class="GlobalCart-count">0</div>
+            </a>
+            <a class="GlobalCart-button is-mobile Header-button Header-cart" href="#">
+               <span class="Header-buttonText">Cart</span>
+               <div class="GlobalCart-count">0</div>
+            </a>
+            <div class="GlobalCart-popup">
+               <div class="GlobalCart-loading">
+                  <div class="Alert GlobalCart-loadingError is-error">
+                     <div class="Alert-content">?</span></div>
+                  </div>
+               </div>
+               <div class="GlobalCart-footer"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <a class="Header-menu" href="#" id="GlobalMenuButton">
+      <span class="Header-menuText">Menu</span>
+   </a>
+</div>
