@@ -1,9 +1,9 @@
 <div class="Header Content">
    <a class="Header-logoLink" href="index.html">
-    <img class="Header-logo" src="#"><%= link_to 'BookStore', root_path %></a>
+    <%= link_to (image_tag("logo2.png", class: "Header-logo")), root_path %></a>
    <div class="SearchContainer SearchContainer--header" id="GlobalSearch">
       <div class="Search">
-         <input class="Search-input" placeholder="Search 7+ Million Books by Title, Author, Keyword, or ISBN" type="text" value="">
+         <input class="Search-input" placeholder="Search Books by Title, Author, Keyword, or ISBN" type="text" value="">
          <div class="Search-submit Button-container is-small is-flat" title="">Search</button></div>
          <ul class="Search-results u-hidden"></ul>
       </div>
@@ -14,7 +14,7 @@
    <div id="GlobalCartContainer" class="Header-button Header-cart">
       <div class="GlobalCart-container">
          <div class="Hover" id="hover-149d202">
-            <a class="GlobalCart-button is-desktop Header-button Header-cart" href="/cart/shoppingcart.aspx">
+            <a class="GlobalCart-button is-desktop Header-button Header-cart" href="#">
                <span class="Header-buttonText">Cart</span>
                <div class="GlobalCart-count">0</div>
             </a>
