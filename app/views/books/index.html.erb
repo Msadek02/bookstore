@@ -19,7 +19,7 @@
     <td><%= book.name %></td>
     <td><%= book.publish_date %></td>
     <td><%= book.author_id %><%= link_to 'Author', authors_path %></td>
-    <td><%= number_to_currency (book.price) %></td>
+    <td><%= number_to_currency(book.price) %></td>
     <td><%= book.description %></td>
     <% if book.sold_out? %>
       <td> Sold Out </td>

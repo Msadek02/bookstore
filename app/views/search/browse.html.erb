@@ -173,22 +173,22 @@
       </div>
       <div data-reactid=".7.0.1.0.3">
          <div class="BrowseList is-grid" data-reactid=".7.0.1.0.3.0">
-
+            <% @books.each do |book| %> 
             <a class="BrowseEntry is-grid BookSlider-slide" href="/w/the-hunger-games-by-suzanne-collins/246187/#isbn=0439023521" data-reactid=".7.0.1.0.3.0.$5277544">
                <div class="BookSlider-contentContainer" data-reactid=".7.0.1.0.3.0.$5277544.0">
                   <div class="BookSlider-imageContainer" data-reactid=".7.0.1.0.3.0.$5277544.0.0">
                      <div class="BookSlider-padding" data-reactid=".7.0.1.0.3.0.$5277544.0.0.0"></div>
-                     <img alt="The Hunger Games" class="BookSlider-image" src="http://ecx.images-amazon.com/images/I/41bOj-am1RL._SL230_.jpg" data-reactid=".7.0.1.0.3.0.$5277544.0.0.1">
+                     <img class="BookSlider-image"><%= image_tag book.picture_url, width: '117' %>
                   </div>
-                  <div class="BookSlider-content" data-reactid=".7.0.1.0.3.0.$5277544.0.1">
-                     <p class="BookSlider-title" data-reactid=".7.0.1.0.3.0.$5277544.0.1.0">The Hunger Games</p>
-                     <p class="BookSlider-author" data-reactid=".7.0.1.0.3.0.$5277544.0.1.1">Suzanne Collins</p>
-                     <span data-reactid=".7.0.1.0.3.0.$5277544.0.1.3"> </span>
-                     <p class="BookSlider-price" data-reactid=".7.0.1.0.3.0.$5277544.0.1.5"><span data-reactid=".7.0.1.0.3.0.$5277544.0.1.5.0"><span data-reactid=".7.0.1.0.3.0.$5277544.0.1.5.0.0">from: </span><strong data-reactid=".7.0.1.0.3.0.$5277544.0.1.5.0.1"><span data-reactid=".7.0.1.0.3.0.$5277544.0.1.5.0.1.0">$</span><span data-reactid=".7.0.1.0.3.0.$5277544.0.1.5.0.1.1">3.59</span></strong></span></p>
+                  <div class="BookSlider-content">
+                     <p class="BookSlider-title"><%= book.name %></p>
+                     <p class="BookSlider-author"><%= book.author.name %></p>
+                     <span data-reactid=".7.0.1.0.3.0.$5277544.0.1.3"></span>
+                     <p class="BookSlider-price" data-reactid=".7.0.1.0.3.0.$5277544.0.1.5"><span data-reactid=".7.0.1.0.3.0.$5277544.0.1.5.0"><span data-reactid=".7.0.1.0.3.0.$5277544.0.1.5.0.0">from: </span><strong data-reactid=".7.0.1.0.3.0.$5277544.0.1.5.0.1"><span data-reactid=".7.0.1.0.3.0.$5277544.0.1.5.0.1.0"></span><span data-reactid=".7.0.1.0.3.0.$5277544.0.1.5.0.1.1"><%= number_to_currency (book.price) %></span></strong></span></p>
                   </div>
                </div>
             </a>
-            
+          <% end %>
          </div>
          <span data-reactid=".7.0.1.0.3.1"></span>
          <div class="Browse-paginationContainer" data-reactid=".7.0.1.0.3.2">
