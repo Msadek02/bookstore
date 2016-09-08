@@ -4,6 +4,6 @@ class SearchController < ApplicationController
   end
 
   def details
-    
+    @book = Book.find(params[:book_id])
   end
 end

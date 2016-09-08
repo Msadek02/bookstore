@@ -181,7 +181,7 @@
                      <img class="BookSlider-image"><%= image_tag book.picture_url, width: '117' %>
                   </div>
                   <div class="BookSlider-content">
-                     <p class="BookSlider-title"><%= link_to (book.name), details_path %></p>
+                     <p class="BookSlider-title"><%= book.name %></p>
                      <p class="BookSlider-author"><%= book.author.name %></p>
                      <span data-reactid=></span>
                      <p class="BookSlider-price"><span><span>from: </span><strong><span></span><span><%= number_to_currency (book.price) %></p>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'browse', controller: 'search'
-  get 'details', controller: 'search'
+  get 'details/book/:book_id', to: 'search#details'
 
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
