@@ -14,6 +14,7 @@ Book.delete_all
                 publish_date: Faker::Time.between(DateTime.now - 1, DateTime.now),
                 price: Faker::Commerce.price,
                 description: Faker::Lorem.sentence,
+                inventory: Faker::Number.between(1, 30),
                 minimum_age: Faker::Number.between(3, 9),
                 maximum_age: Faker::Number.between(10, 20)	
 		        )
