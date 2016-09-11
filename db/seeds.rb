@@ -1,15 +1,20 @@
 Author.delete_all
-author1 = Author.create name: 'Ahmed'
-author2 = Author.create name: 'Mostafa'
-
+20.times do 
+	author = Author.create(name: Faker::Name.name,
+                           email: Faker::Internet.email,
+                           bio: Faker::Hipster.sentences
+		)
+end
 
 Book.delete_all
-Book.create! id: 1, name: "Banana", price: 0.49, author_id: author1.id, publish_date: Time.now
-Book.create! id: 2, name: "Apple", price: 0.29, author_id: author2.id, publish_date: Time.now
-Book.create! id: 3, name: "Carton of Strawberries", price: 1.99, author_id: author1.id, publish_date: Time.now
-
-OrderStatus.delete_all
-OrderStatus.create! id: 1, name: "In Progress"
-OrderStatus.create! id: 2, name: "Placed"
-OrderStatus.create! id: 3, name: "Shipped"
-OrderStatus.create! id: 4, name: "Cancelled"
+200.times do 
+	Book.create(name: Faker::Name.name, 
+		        picture: Faker::Avatar.image,
+                author_id: Faker::Book.author,
+                publish_date: Faker::Time.between(DateTime.now - 1, DateTime.now),
+                price: Faker::Commerce.price,
+                description: Faker::Lorem.sentence,
+                minimum_age: Faker::Number.between(3, 9),
+                maximum_age: Faker::Number.between(10, 20)	
+		        )
+end
