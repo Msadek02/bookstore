@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :find_book, only: [:edit, :update, :destroy]
 
   def index
-    @books = Book.order(created_at: :desc)
+    @books = Book.order(created_at: :desc).page params[:page]
     @order_item = current_order.order_items.new
   end
 
@@ -40,6 +40,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:name, :author_id, :publish_date, :tag_list, :price, :picture, :description, :inventory)  
+    params.require(:book).permit(:name, :author_id, :publish_date, :tag_list, :price, :picture, :description, :inventory, :page)  
   end
 end
