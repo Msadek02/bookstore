@@ -15,6 +15,7 @@ gem 'ratyrate'
 gem 'acts_as_commentable'
 gem 'carrierwave'
 gem 'pry'
+gem 'kaminari'
 gem 'faker', '~> 1.6', '>= 1.6.3'
 gem "letter_opener", :group => :development
 gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
