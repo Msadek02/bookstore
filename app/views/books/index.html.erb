@@ -1,6 +1,7 @@
 <%= button_to "Add Book", new_book_path, :id => "open-contacts-dialog-btn",
       :class => "inbox-sf-add-btn tip", :method => :get %>
 <br>
+<%= page_entries_info @books %>
 <table>
   <tr>
     <th>Image</th>
@@ -34,3 +35,4 @@
   </tr>
   <% end %>
 </table>
+<%= paginate @books %>

@@ -3,6 +3,7 @@ Book.delete_all
 
 
 1.upto(20).each do |number|
+  print '.'
   author = Author.create( 
 				  	       id: number,
 						   name: Faker::Name.name, 
@@ -12,7 +13,9 @@ Book.delete_all
 						   )
 end
 
-1.upto(200).each  do
+1.upto(2000).each  do
+  print '.'
+
   Book.create(
   	            name: Faker::Name.name, 
 			  	remote_picture_url: Faker::Avatar.image, 

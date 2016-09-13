@@ -15,6 +15,7 @@ gem 'ratyrate'
 gem 'acts_as_commentable'
 gem 'carrierwave'
 gem 'pry'
+gem "pure-css-rails"
 gem 'kaminari'
 gem 'faker', '~> 1.6', '>= 1.6.3'
 gem "letter_opener", :group => :development
