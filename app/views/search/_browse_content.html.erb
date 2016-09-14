@@ -1,0 +1,95 @@
+<div class="BrowseContent-container" >
+   <div class="BrowseContent" >
+      <h4 class="SearchPage-title" >Search</h4>
+      <div class="BrowseSearchTerms" >
+      </div>
+      <h3 class="BrowseContent-title" > results found</span></span></h3>
+      <div class="BrowseSortBar" >
+         <button class="BrowseSortBar-header is-link" title="" type="button" >
+            <span >Sort</span>
+            <svg icon="chevron-up" class="Icon" >
+               <use data-classes="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Icon--chevron-up" ></use>
+            </svg>
+         </button>
+         <div class="BrowseSortBar-content" >
+            <div class="BrowseSort" >
+               <div class="BrowseSort-label" >Sort by:</div>
+               <select class="is-small" >
+                  <option value="topMatches-desc" >Relevance</option>
+                  <option selected="" value="bestsellers-desc" >Most Popular</option>
+                  <option value="title-asc" >Title (A to Z)</option>
+                  <option value="title-desc" >Title (Z to A)</option>
+                  <option value="publishDate-desc" >Publish Date (New to Old)</option>
+                  <option value="publishDate-asc" >Publish Date (Old to New)</option>
+               </select>
+            </div>
+            <div class="BrowseItemsPerPage" >
+               <label for="BrowseItemsPerPage" >Items per page:</label>
+               <select class="is-small" id="BrowseItemsPerPage" >
+                  <option value="5" >5</option>
+                  <option value="10" >10</option>
+                  <option selected="" value="25" >25</option>
+                  <option value="50" >50</option>
+               </select>
+            </div>
+            <div class="BrowseOutOfStock" >
+               <label class="Checkbox is-large" >
+                  <input checked="" type="checkbox" >Show Out of Stock Items</strong>
+                  <div class="Checkbox-state" ></div>
+               </label>
+            </div>
+            <div class="BrowseGridView" >
+               <button class="BrowseGridView-option is-link" title="List View" type="button" >
+                  <svg icon="list" class="Icon" >
+                     <use data-classes="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Icon--list" ></use>
+                  </svg>
+                  <span class="BrowseGridView-label" >List View</span>
+               </button>
+               <button class="BrowseGridView-option is-active is-link" title="Grid View" type="button" >
+                  <svg icon="grid" class="Icon" >
+                     <use data-classes="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Icon--grid" ></use>
+                  </svg>
+                  <span class="BrowseGridView-label" >Grid View</span>
+               </button>
+            </div>
+         </div>
+      </div>
+      <div >
+        <% @books.each do |book| %>
+            <a class="BrowseEntry is-grid BookSlider-slide" href="<%= details_path(book) %>" >
+               <div class="BookSlider-contentContainer" >
+                  <div class="BookSlider-imageContainer" >
+                     <div class="BookSlider-padding" ></div>
+                     <img alt="Children of Dune" class="BookSlider-image" <%= image_tag book.picture_url, size: "25" %> 
+                  </div>
+                  <div class="BookSlider-content">
+                     <p class="BookSlider-title" ><%= book.name %></p>
+                     <p class="BookSlider-author" ><%= book.author.name %></p>
+                     <span > </span>
+                     <p class="BookSlider-price" ><%= number_to_currency(book.price) %></span></strong></span></p>
+                  </div>
+               </div>
+            </a>
+     <% end %>
+ 
+         </div>
+         <span ></span>
+         <div class="Browse-paginationContainer" >
+            <button class="Browse-pagination is-left is-link is-disabled" disabled="" title="Previous page" type="button" >
+               <svg icon="chevron-left" class="Icon" >
+                  <use data-classes="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Icon--chevron-left" ></use>
+               </svg>
+            </button>
+            <button class="Browse-pagination is-right is-link" title="Next page" type="button" >
+               <svg icon="chevron-right" class="Icon" >
+                  <use data-classes="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Icon--chevron-right" ></use>
+               </svg>
+            </button>
+            <div class="Browse-paginationInput" >
+               <div class="Browse-paginationInput-content" >400</strong></div>
+               <div class="Browse-paginationInput-link u-hidden" >Go</button></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

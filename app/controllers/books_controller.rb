@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :find_book, only: [:edit, :update, :destroy]
 
   def index
-    @books = Book.order(created_at: :desc)
+    @books = Book.order(created_at: :desc).page params[:page]
     @order_item = current_order.order_items.new
   end
 

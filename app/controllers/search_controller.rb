@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def browse
-    @books = Book.search(params[:search]).records.records
+    @books = Book.search(params[:search]).records.records.page params[:page]
   end
 
   def details
