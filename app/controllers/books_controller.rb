@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   def index
     @books = Book.order(created_at: :desc).page params[:page]
     @order_item = current_order.order_items.new
+    @categories = Book.all_categories
   end
 
   def create

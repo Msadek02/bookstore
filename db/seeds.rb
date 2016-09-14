@@ -1,6 +1,12 @@
 Author.delete_all
 Book.delete_all
 
+# created an empty array for store all the categories
+categories = []
+
+# Loop over 20 times and add random books to the categories array
+1.upto(20).each{ categories << Faker::Book.genre }
+
 
 1.upto(20).each do |number|
   print '.'
@@ -13,10 +19,11 @@ Book.delete_all
 						   )
 end
 
-1.upto(2000).each  do
+
+1.upto(200).each  do
   print '.'
 
-  Book.create(
+  book = Book.create(
   	            name: Faker::Name.name, 
 			  	remote_picture_url: Faker::Avatar.image, 
 			  	author_id: rand(1..20), 
@@ -26,5 +33,11 @@ end
 			  	inventory: Faker::Number.between(1, 30), 
 			  	minimum_age: Faker::Number.between(3, 9), 
 			  	maximum_age: Faker::Number.between(10, 20)
-  	)
+			  	)
+
+
+    random_category1 = categories[Faker::Number.between(0, 19)]
+    random_category2 = categories[Faker::Number.between(0, 19)]
+	book.tag_list.add(random_category1, random_category2)
+	book.save
 end
