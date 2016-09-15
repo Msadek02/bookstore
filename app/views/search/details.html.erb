@@ -43,14 +43,14 @@
             <div class="WorkMeta-details is-collapsable is-collapsed">
                <div class="WorkMeta-detailsRow is-collapsed">Paperback</span></div>
                <div class="WorkMeta-detailsRow is-collapsed is-important">English</span></div>
-               <div class="WorkMeta-detailsRow">0545139708</span></div>
+               <div><%= image_tag @book.picture_url, size: "150" %></div>
                <div class="WorkMeta-detailsRow is-collapsed">9780545139700</span></div>
-               <div class="WorkMeta-detailsRow">July 2009</span></div>
-               <div class="WorkMeta-detailsRow">Arthur A. Levine Books</span></div>
+               <div class="WorkMeta-detailsRow"><%= @book.publish_date.strftime("%m/%d/%Y") %></span></div>
+               <div class="WorkMeta-detailsRow"><%= @book.author.name %></span></div>
                <div class="WorkMeta-detailsRow is-collapsed">784 Pages</span></div>
                <div class="WorkMeta-detailsRow is-collapsed">2.45 lbs.</span></div>
                <div class="WorkMeta-detailsRow is-collapsed"</span></div>
-               <div class="WorkMeta-detailsRow is-collapsed">9 to 12 years</span></div>
+               <div class="WorkMeta-detailsRow is-collapsed"><%= @book.age_range %></span></div>
                <div class="WorkMeta-detailsRow is-collapsed">Grades 4 to 7</span></div>
                <button class="WorkMeta-detailsCollapseButton is-link" title="" type="button">
                   <span> Details</span>
