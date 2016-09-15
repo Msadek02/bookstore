@@ -296,7 +296,7 @@
                <div class="SidebarSection-option">
                   <label class="Checkbox">
                      <input type="checkbox"></input>
-                     <strong class="Checkbox-label"><span><span><%= category %></span><span> </span><span class="SearchPage-genreCount"><span>(</span><span><%= count %></span><span>)</span></span></span></strong>
+                     <strong class="Checkbox-label"><span><span class='name'><%= category %></span><span> </span><span class="SearchPage-genreCount"><span>(</span><span><%= count %></span><span>)</span></span></span></strong>
                      <div class="Checkbox-state"></div>
                   </label>
                </div>
@@ -305,12 +305,14 @@
             <div class="SidebarSection-header">
                <h4>Age Ranges</h4>
             </div>
+            <% @books.each do |book| %>
                <div class="SidebarSection-option">
                   <label class="Checkbox">
                      <input type="checkbox"></span></span></span></strong>
-                     <div class="Checkbox-state"></div>
+                     <div class="Checkbox-state"><%= book.age_range %></div>
                   </label>
                </div>
+               <% end %>
             </div>
          </div>
          
