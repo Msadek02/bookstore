@@ -1,5 +1,6 @@
 Author.delete_all
 Book.delete_all
+User.delete_all
 
 # created an empty array for store all the categories
 categories = []
@@ -40,4 +41,13 @@ end
     random_category2 = categories[Faker::Number.between(0, 19)]
 	book.tag_list.add(random_category1, random_category2)
 	book.save
+end
+
+1.upto(20).each do 
+	print 's'
+            User.create(
+		          email: Faker::Internet.email,
+		          password: Faker::Internet.password,
+		          password_confirmation: Faker::Internet.password
+		)
 end

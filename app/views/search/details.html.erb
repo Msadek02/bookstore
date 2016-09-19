@@ -53,7 +53,7 @@
                <div class="WorkMeta-detailsRow is-collapsed"><%= @book.age_range %></span></div>
                <div class="WorkMeta-detailsRow is-collapsed">Grades 4 to 7</span></div>
                <button class="WorkMeta-detailsCollapseButton is-link" title="" type="button">
-                  <span> Details</span>
+                  <span> <%= rating_for @book, 'quality', enable_half: true %></span>
                   <svg icon="chevron-down" class="Icon">
                      <use data-classes="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Icon--chevron-down"></use>
                   </svg>
