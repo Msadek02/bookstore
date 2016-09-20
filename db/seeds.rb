@@ -50,6 +50,7 @@ end
     id: number,
     email: Faker::Internet.email,
     password: 'password',
-    password_confirmation: 'password'
+    password_confirmation: 'password',
+    remote_picture_url: Faker::Avatar.image
   )
 end
