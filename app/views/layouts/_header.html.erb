@@ -1,5 +1,10 @@
 <div class="Header Content">
    <a class="Header-logoLink" href="index.html">
+   <% if user = current_user %>  
+      <%= link_to 'LogOut', destroy_user_session_path, method: :delete %>
+   <% else %>
+      <%= link_to 'LogIn', new_user_session_path  %>
+   <% end %>
    <%= link_to (image_tag("logo2.png", class: "Header-logo")), root_path %></a>
    <div class="SearchContainer SearchContainer--header" id="GlobalSearch">
       <%= form_tag browse_path, method: 'get' do %>
