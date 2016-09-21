@@ -5,6 +5,7 @@
 <table>
   <tr>
     <th>Image</th>
+    <th>Quality</th>
     <th>Name</th>
     <th>Publish Date</th>
     <th>Author Id</th>
@@ -17,6 +18,7 @@
   <% @books.each do |book| %>
   <tr>
     <td><%= image_tag book.picture_url, size: "25" %></td>
+    <td><%= rating_for book, 'quality', enable_half: true %></td>
     <td><%= book.name %></td>
     <td><%= book.publish_date %></td>
     <td><%= book.author_id %><%= link_to 'Author', authors_path %></td>

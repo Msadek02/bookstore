@@ -53,7 +53,7 @@
                <div class="WorkMeta-detailsRow is-collapsed"><%= @book.age_range %></span></div>
                <div class="WorkMeta-detailsRow is-collapsed">Grades 4 to 7</span></div>
                <button class="WorkMeta-detailsCollapseButton is-link" title="" type="button">
-                  <span> Details</span>
+                  <span> <%= rating_for @book, 'quality', enable_half: true %></span>
                   <svg icon="chevron-down" class="Icon">
                      <use data-classes="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Icon--chevron-down"></use>
                   </svg>
@@ -106,11 +106,12 @@
                   </div>
                   <div class="MiniBrowse-seeAllLink is-desktop">
                      <button class="is-link" title="" type="button">
-                        <span> formats &amp; editions</span>
+                        <span> Details </span>
                         <svg icon="chevron-down" class="Icon">
                            <use data-classes="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Icon--chevron-down"></use>
                         </svg>
                      </button>
+                     <p><%= @book.description %></p>
                   </div>
                   <div class="MiniBrowseContainer">
                      <div>
@@ -158,40 +159,18 @@
                         </div>
                         <div class="WorkSwitcher">
                            <span class="WorkSwitcher-format">
-                              <button class="WorkSwitcher-formatButton is-link" title="" type="button">
-                                 <div class="WorkSwitcher-formatContent" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                    <span class="WorkSwitcher-formatTitle">3.59</span></span>
-                                    <link href="http://schema.org/InStock" itemprop="availability">
-                                 </div>
-                              </button>
-                              <span class="WorkSwitcher-seeAll"> (see all)</span></button></span>
-                           </span>
-                           <span class="WorkSwitcher-format is-active">
-                              <button class="WorkSwitcher-formatButton is-link" title="" type="button">
-                                 <div class="WorkSwitcher-formatContent" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                    <span class="WorkSwitcher-formatTitle">6.13</span></span>
-                                    <link href="http://schema.org/InStock" itemprop="availability">
-                                 </div>
-                              </button>
-                              <span class="WorkSwitcher-seeAll"> (see all)</span></button></span>
                            </span>
                            <span class="WorkSwitcher-format">
-                              <button class="WorkSwitcher-formatButton is-link" title="" type="button">
-                                 <div class="WorkSwitcher-formatContent" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                    <span class="WorkSwitcher-formatTitle">21.34</span></span>
-                                    <link href="http://schema.org/InStock" itemprop="availability">
-                                 </div>
-                              </button>
-                              <span class="WorkSwitcher-seeAll"> (see all)</span></button></span>
+                              
+                             </span>
                            </span>
                         </div>
                      </div>
                   </div>
                   <div class="is-desktop">
-                     <a class="WorkMeta-freeShippingMessage" href="/s/free-shipping/">Free shipping on all U.S. orders over $10!</a>
+                     
                      <h5 class="WorkMeta-overviewTitle"></p>
                      <button class="WorkMeta-overviewReadMore is-link" title="" type="button">
-                        <span>More Details</span>
                         <svg class="Icon WorkMeta-overviewIcon" icon="chevron-down">
                            <use data-classes="WorkMeta-overviewIcon" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Icon--chevron-down"></use>
                         </svg>
@@ -202,21 +181,20 @@
                   <div class="WorkPriceContainer">
                      <div class="WorkPriceContainer-header">
                         <div class="WorkPriceContainer-prices">
-                           <div class="WorkPriceContainer-priceText">6.13</span></div>
+                        <div class="WorkPriceContainer-priceText" data-reactid=".8.0.1.0.0.0.1.0.0.0.0"><span data-reactid=".8.0.1.0.0.0.1.0.0.0.0.0">$</span><span data-reactid=".8.0.1.0.0.0.1.0.0.0.0.1"><%= @book.price %></span></div>
+                           
                            <small class="WorkPriceContainer-listPriceText">
                               <div>
-                                 <span>18.98</span></span>
-                                 <div>%</span></div>
                               </div>
                            </small>
                         </div>
                         <h5>Best Value</h5>
                         <div>
-                           <strong class="WorkPriceContainer-mediaText">Paperback</strong>
+                          
                            <span class="WorkPriceContainer-conditionText">
                               <div class="Tooltip" width="250">
                                  <div class="Hover has-indicator" id="hover-1eba16d" style="cursor:help;">
-                                    <span>Acceptable</span></span>
+                                    </span>
                                     <div class="Tooltip-tip is-bottom is-multiline">
                                        <div class="Tooltip-tipContent">
                                           <p>: A readable copy. All pages are intact, and the cover is intact (the dust cover may be missing). Pages can include considerable notes—in pen or highlighter—but the notes cannot obscure the text.</span></p>
@@ -247,7 +225,6 @@
                                  <div class="Dropdown" id="dropdown-1517216" role="menubar">
                                     <div aria-haspopup="true" class="Dropdown-selection" tabindex="0">
                                        <div class="Dropdown-itemTitle">Paperback</div>
-                                       <div class="Dropdown-itemDescription">from $6.13</div>
                                        <svg icon="caret-down" class="Icon">
                                           <use data-classes="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Icon--caret-down"></use>
                                        </svg>
@@ -255,14 +232,11 @@
                                     <ul aria-hidden="true" class="Dropdown-list" role="menu">
                                        <li class="" data-idx="0" role="menuitem" tabindex="-1" value="3872606">
                                           <button class="has-description is-link" title="" type="button">
-                                             <div class="Dropdown-itemTitle">Hardcover</div>
-                                             <div class="Dropdown-itemDescription">from $3.59</div>
                                           </button>
                                        </li>
                                        <li class="" data-idx="1" role="menuitem" tabindex="-1" value="5001248">
                                           <button class="has-description is-link" title="" type="button">
                                              <div class="Dropdown-itemTitle">Paperback</div>
-                                             <div class="Dropdown-itemDescription">from $6.13</div>
                                           </button>
                                        </li>
                                        <li class="" data-idx="2" role="menuitem" tabindex="-1" value="5767966">
@@ -278,7 +252,7 @@
                                  <span class="WorkSwitcher-format">
                                     <button class="WorkSwitcher-formatButton is-link" title="" type="button">
                                        <div class="WorkSwitcher-formatContent" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                          <span class="WorkSwitcher-formatTitle">3.59</span></span>
+                                          </span>
                                           <link href="http://schema.org/InStock" itemprop="availability">
                                        </div>
                                     </button>
@@ -365,7 +339,7 @@
                      </button>
                   </p>
                   <a class="WorkMeta-freeShippingMessage" href="/s/free-shipping/">Free shipping on all U.S. orders over $10!</a>
-                  <h5 class="WorkMeta-overviewTitle">Overview</h5>
+                  <h5 class="WorkMeta-overviewTitle"></h5>
                   <p class="WorkMeta-overview">Readers beware. The brilliant, breathtaking conclusion to J.K. Rowling's spellbinding series is not for the faint of heart--such revelations, battles, and betrayals await in Harry Potter and the Deathly Hallows that no fan will make it to the end unscathed. Luckily, Rowling has prepped loyal readers...</p>
                   <button class="WorkMeta-overviewReadMore is-link" title="" type="button">
                      <span>More Details</span>
