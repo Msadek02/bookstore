@@ -23,8 +23,19 @@ categories = []
   )
 end
 
+1.upto(20).each do |number|
+  print 's'
+  user = User.new(
+    id: number,
+    email: Faker::Internet.email,
+    password: 'password',
+    password_confirmation: 'password',
+    remote_image_url: 'http://profiledps.com/images/dps/full/dp_pictures-luxury-cars-profile-dps2014-10-28_02-41-50_2.jpg',
+  )
+  user.save
+end
 
-1.upto(200).each  do
+1.upto(20).each  do
   print '.'
 
   book = Book.create(
@@ -43,16 +54,12 @@ end
   random_category2 = categories[Faker::Number.between(0, 19)]
   book.tag_list.add(random_category1, random_category2)
   book.save
-end
 
-1.upto(20).each do |number|
-  print 's'
-  user = User.new(
-    id: number,
-    email: Faker::Internet.email,
-    password: 'password',
-    password_confirmation: 'password',
-    remote_image_url: 'http://profiledps.com/images/dps/full/dp_pictures-luxury-cars-profile-dps2014-10-28_02-41-50_2.jpg',
-  )
-  user.save
+  1.upto(10).each do
+     book.comments.create(
+      user_id: rand(1..20),
+      comment: Faker::Lorem.paragraph,
+      title: Faker::Name.title 
+      )
+  end
 end
