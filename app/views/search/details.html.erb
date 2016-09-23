@@ -104,7 +104,7 @@
                         <button class="WorkMeta-reviewsLink is-link" title="" type="button"></button>
                      </div>
                   </div>
-                  <% @book.comments.each do |comment| %>
+                  
                   <div class="MiniBrowse-seeAllLink is-desktop">
                      <button class="is-link" title="" type="button">
                         <span> Details </span>
@@ -114,7 +114,9 @@
                      </button>
                      <p><%= @book.description %></p>
                   </div>
-                    <p><%= @book.comments(comment) %></p>
+                <% @book.comments.each do |comment| %>
+                   <a> Comment </a>
+                    <p><%= comment.comment %></p>
                   <% end %>
                   <div class="MiniBrowseContainer">
                      <div>
