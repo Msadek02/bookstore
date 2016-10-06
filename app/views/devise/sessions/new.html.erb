@@ -1,26 +1,44 @@
-<h2>Log in</h2>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
+<div class="Content">
+<div id="ctl00_ctl00_cphBody_cphBodyMain_divLogin" class="LoginBox LoginBox--existingUser">
+<div id="ctl00_ctl00_cphBody_cphBodyMain_UserCtrlExsUser_pnlExsitingUser" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_ctl00_cphBody_cphBodyMain_UserCtrlExsUser_imgBtnExistUser')">
+<div class="LoginBox-headerArea">
+<a class="LoginBox-tabMobile">New Account</a>
+<h1 class="LoginBox-header">Sign In</h1>
+<a class="LoginBox-tab"><%= render "devise/shared/links" %></a>
+</div>
+<div class="LoginBox-formArea">
+<div class="LoginBox-textboxArea">
+<div class="LoginBox-emailAddressWarning ErrorBox">Please enter an email.</div>
+<label class="LoginBox-fallbackLabel u-hidden"><%= f.label :email %></label>
+<div class="jvFloat"><span class="placeHolder" for="ctl00_ctl00_cphBody_cphBodyMain_UserCtrlExsUser_txtEmailAddress"></span><%= f.email_field :email, autofocus: true %><input name="ctl00$ctl00$cphBody$cphBodyMain$UserCtrlExsUser$txtEmailAddress" type="text" maxlength="200" id="ctl00_ctl00_cphBody_cphBodyMain_UserCtrlExsUser_txtEmailAddress" class="LoginBox-textBox tbjvFloat LoginBox-emailAddressTextbox LoginBox-emailAddressTextbox--existingUser" placeholder="Email Address"></div>
+<label class="LoginBox-fallbackLabel u-hidden"><%= f.label :password %></label>
+<div class="jvFloat"><span class="placeHolder" for="ctl00_ctl00_cphBody_cphBodyMain_UserCtrlExsUser_txtPassword"></span><%= f.password_field :password, autocomplete: "off" %><input name="ctl00$ctl00$cphBody$cphBodyMain$UserCtrlExsUser$txtPassword" type="password" maxlength="25" id="ctl00_ctl00_cphBody_cphBodyMain_UserCtrlExsUser_txtPassword" class="LoginBox-textBox tbjvFloat" placeholder="Password"></div>
+</div>
+<div class="LoginBox-staySignedInArea">
+<label class="Checkbox">
+<input name="ctl00$ctl00$cphBody$cphBodyMain$UserCtrlExsUser$chkPersistent" type="checkbox" id="ctl00_ctl00_cphBody_cphBodyMain_UserCtrlExsUser_chkPersistent" class="Checkbox">
+<% if devise_mapping.rememberable? -%>
+<div class="Checkbox-label">
+<span class="LoginBox-staySignedInText"><%= f.check_box :remember_me %>
+      <%= f.label :remember_me %></span>
+<span class="LoginBox-staySignedInWarning">Not recommended if using a public or shared computer</span>
+</div>
+<% end -%>
+<div class="Checkbox-state"></div>
+</label>
+</div>
+<div class="LoginBox-submitArea">
+<div class="Loading-spinner is-hidden">
+<div class="Loading-rect"></div>
+<div class="Loading-rect"></div>
+<div class="Loading-rect"></div>
+<div class="Loading-rect"></div>
+<div class="Loading-rect"></div>
+</div>
+<%= f.submit "Log in" %>
+</div>
+</div>
+</div>
+</div>
 <% end %>
-
-<%= render "devise/shared/links" %>

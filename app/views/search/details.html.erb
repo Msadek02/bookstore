@@ -104,7 +104,6 @@
                         <button class="WorkMeta-reviewsLink is-link" title="" type="button"></button>
                      </div>
                   </div>
-                  
                   <div class="MiniBrowse-seeAllLink is-desktop">
                      <button class="is-link" title="" type="button">
                         <span> Details </span>
@@ -114,10 +113,10 @@
                      </button>
                      <p><%= @book.description %></p>
                   </div>
-                <% @book.comments.each do |comment| %>
-                   <a> Comment </a>
+                 <% @book.comments.each do |comment| %>
+                    <%= link_to 'Comment', edit_comment_path(comment.id) %>
                     <p><%= comment.comment %></p>
-                  <% end %>
+                 <% end %>
                   <div class="MiniBrowseContainer">
                      <div>
                         <div class="Loading-spinner">
