@@ -296,7 +296,7 @@
                <div class="SidebarSection-option">
                   <label class="Checkbox">
                      <input type="checkbox"></input>
-                     <strong class="Checkbox-label"><span><span class='name'><%= category %></span><span> </span><span class="SearchPage-genreCount"><span><%= Book.find_by_category(category) %></span><span><%= count %></span><span></span></span></span></strong>
+                     <strong class="Checkbox-label"><span><span class='name'><%= category %></span><span> </span><span class="SearchPage-genreCount"><span><%= Book.tagged_with(category) %></span><span><%= count %></span><span></span></span></span></strong>
                      <div class="Checkbox-state"></div>
                   </label>
                </div>
@@ -308,8 +308,8 @@
             <% @books.each do |book| %>
                <div class="SidebarSection-option">
                   <label class="Checkbox">
-                     <input type="checkbox"></span></span></span></strong>
-                     <div class="Checkbox-state"><%= book.age_range %></div>
+                     <input type="checkbox"></span><%= book.age_range %></span></span></strong>
+                     <div class="Checkbox-state"></div>
                   </label>
                </div>
                <% end %>
