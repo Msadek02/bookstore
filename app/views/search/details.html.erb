@@ -113,6 +113,10 @@
                      </button>
                      <p><%= @book.description %></p>
                   </div>
+                 <% @book.comments.each do |comment| %>
+                    <%= link_to 'Comment', edit_comment_path(comment.id) %>
+                    <p><%= comment.comment %></p>
+                 <% end %>
                   <div class="MiniBrowseContainer">
                      <div>
                         <div class="Loading-spinner">
